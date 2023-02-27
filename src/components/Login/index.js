@@ -96,6 +96,11 @@ class Login extends Component {
     }
     return (
       <div className="login-form-container">
+        <img
+          src="https://res.cloudinary.com/dkobk5oao/image/upload/v1633587041/Rectangle_1457_xkvsxy.png"
+          className="login-website-logo-mobile-image"
+          alt="website logo"
+        />
         <div className="login-container">
           <form className="form-container" onSubmit={this.submitForm}>
             <img
@@ -103,14 +108,14 @@ class Login extends Component {
               className="login-website-logo-desktop-image"
               alt="website logo"
             />
-            <h1 className="logo-heading">Tasty Kitchens</h1>
+            <h1 className="logo-heading">Tasty Kitchen</h1>
             <h1 className="login-heading">Login</h1>
             <div className="input-container">{this.renderUsernameField()}</div>
             <div className="input-container">{this.renderPasswordField()}</div>
-            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
             <button type="submit" className="login-button">
               Login
             </button>
+            {showSubmitError && <p className="error-message">*{errorMsg}</p>}
           </form>
         </div>
         <img

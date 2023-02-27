@@ -120,3 +120,8 @@
     width: 50%;
   }
 }
+.time {
+  color: #ffa412;
+  font-size: 15px;
+  font-family: 'Roboto';
+}

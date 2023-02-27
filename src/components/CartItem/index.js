@@ -10,7 +10,7 @@ const CartItem = props => (
     {value => {
       const {incrementCartItemQuantity, decrementCartItemQuantity} = value
       const {cartItem} = props
-      const {id, name, quantity, cost, imageUrl} = cartItem
+      const {id, name, quantity, cost, imageUrl, time} = cartItem
 
       const decreaseQuantity = () => {
         decrementCartItemQuantity(id)
@@ -53,6 +53,7 @@ const CartItem = props => (
             <p className="price">
               <FaRupeeSign size={12} /> {cost * quantity}
             </p>
+            <p className="time">{time}</p>
           </div>
         </li>
       )

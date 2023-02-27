@@ -27,13 +27,31 @@ class FoodItemCard extends Component {
           const {foodItem} = this.props
           const {id, imageUrl, name, cost, rating} = foodItem
           const {quantity} = this.state
+          const getTime = () => {
+            const today = new Date()
+            const formatAMPM = date => {
+              let hours = date.getHours()
+              let minutes = date.getMinutes()
+              const ampm = hours >= 12 ? 'pm' : 'am'
+              hours %= 12
+              hours = hours || 12
+              minutes = minutes < 10 ? `0${minutes}` : minutes
+              const strTime = `${hours}:${minutes} ${ampm}`
+              return strTime
+            }
+            return formatAMPM(today)
+          }
 
           const onClickAdd = () => {
             this.setState(
               prevState => ({
                 quantity: prevState.quantity + 1,
               }),
-              addCartItem({...foodItem, quantity: quantity + 1}),
+              addCartItem({
+                ...foodItem,
+                quantity: quantity + 1,
+                time: getTime(),
+              }),
             )
           }
 
